@@ -23,7 +23,7 @@ function lista_elkeszitese(article) {
     "Szeret kocsikázni :)",
   ];
 
-  CIM.innerText = "Pár infó as kutyusomról, Manóról :)";
+  CIM.innerText = "Pár infó a kutyusomról, Manóról :)";
 
   LISTA.forEach((l) => {
     let li = elem_letrehozo(UL, "li");
