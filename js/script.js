@@ -6,8 +6,7 @@ function init() {
 }
 
 function kepek_hozzaadas(article) {
-  const KEP_LISTA = ["kepek/kep1.jpg", "kepek/kep2.jpg", "kepek/kep3.jpg", "kepek/kep4.jpg", "kepek/kep5.jpg"];
-  const KEP_ALT_LISTA = ["Manó a pitypangok között a játékával", "Manóval a Művészetek Völgyében", "Manó az ágy tetejéről figyel", "Manó a hátsó ülésen", "Vezet a Manó :)"]
+  const CIM = elem_letrehozo(article, "h2");
   const KEP_TAROLO = elem_letrehozo(article, "div", "kep-tarolo");
   const KEPEK_JSON = [
     { src: "kepek/kep1.jpg", alt: "Manó a pitypangok között" },
@@ -16,19 +15,13 @@ function kepek_hozzaadas(article) {
     { src: "kepek/kep4.jpg", alt: "Manó a hátsó ülésen" },
     { src: "kepek/kep5.jpg", alt: "Manó a kormánynál :)" },
   ];
-
+  
+  CIM.innerText = "Képek";
 
   KEPEK_JSON.forEach((kj) => {
     let kep_cella = elem_letrehozo(KEP_TAROLO, "div", "kep-cella");
     let img = elem_letrehozo(kep_cella, "img", "kep");
     let kep_szoveg = elem_letrehozo(kep_cella, "span", "kep-szoveg");
-    kep_szoveg.innerText = KEP_ALT_LISTA[i]
-    img.src = `${KEP_LISTA[i]}`
-    img.alt = KEP_ALT_LISTA[i];
-    img.addEventListener("mouseover", eger_esemeny);
-    img.addEventListener("mouseout", eger_esemeny);    
-  }
-}
 
     kep_cella.addEventListener("mouseenter", eger_esemeny);
     kep_cella.addEventListener("mouseleave", eger_esemeny);
