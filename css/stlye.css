@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+ul,
+ol {
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
 
 body {
     background-color: #a87953;
