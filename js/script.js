@@ -9,8 +9,16 @@ function kepek_hozzaadas(article) {
   const KEP_LISTA = ["kepek/kep1.jpg", "kepek/kep2.jpg", "kepek/kep3.jpg", "kepek/kep4.jpg", "kepek/kep5.jpg"];
   const KEP_ALT_LISTA = ["Manó a pitypangok között a játékával", "Manóval a Művészetek Völgyében", "Manó az ágy tetejéről figyel", "Manó a hátsó ülésen", "Vezet a Manó :)"]
   const KEP_TAROLO = elem_letrehozo(article, "div", "kep-tarolo");
+  const KEPEK_JSON = [
+    { src: "kepek/kep1.jpg", alt: "Manó a pitypangok között" },
+    { src: "kepek/kep2.jpg", alt: "Manóval a Művészetek Völgyében" },
+    { src: "kepek/kep3.jpg", alt: "Manó az ágy tetejéről figyel" },
+    { src: "kepek/kep4.jpg", alt: "Manó a hátsó ülésen" },
+    { src: "kepek/kep5.jpg", alt: "Manó a kormánynál :)" },
+  ];
 
-  for (let i = 0; i < KEP_LISTA.length; i++) {
+
+  KEPEK_JSON.forEach((kj) => {
     let kep_cella = elem_letrehozo(KEP_TAROLO, "div", "kep-cella");
     let img = elem_letrehozo(kep_cella, "img", "kep");
     let kep_szoveg = elem_letrehozo(kep_cella, "span", "kep-szoveg");
@@ -22,9 +30,13 @@ function kepek_hozzaadas(article) {
   }
 }
 
-function eger_esemeny(event) {
-  console.log(event.target);
-  event.target.classList.toggle("szegely");
+    kep_cella.addEventListener("mouseenter", eger_esemeny);
+    kep_cella.addEventListener("mouseleave", eger_esemeny);
+    kep_cella.addEventListener("touchenter", eger_esemeny);
+    kep_cella.addEventListener("touchleave", eger_esemeny);
+    img.src = kj.src;
+    kep_szoveg.innerText = img.alt = kj.alt;
+  });
 }
 
 function elem_letrehozo(szuloelem, elem, osztaly = "") {
