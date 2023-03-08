@@ -2,7 +2,33 @@ window.addEventListener("load", init);
 
 function init() {
   const ARTICLE = document.querySelector("article");
+  lista_elkeszitese(ARTICLE);
   kepek_hozzaadas(ARTICLE);
+}
+
+function lista_elkeszitese(article) {
+  const CIM = elem_letrehozo(article, "h2");
+  const UL = elem_letrehozo(article, "ul");
+  const LISTA = [
+    "Decemberben lett 4 éves",
+    "Lány kutya",
+    "Féltékeny típus",
+    "Nagyon szeret ugatni..",
+    "A legtöbb játékát 1-2 nap alatt szétrágcsálja",
+    "Nagyon ragaszkodó",
+    "Szereti a finom falatokat.. csak azokat szereti...",
+    "Van egy kényelmes fotelünk, amit kisajátított magának...",
+    "Szereti, ha ölben dajkálják",
+    "Szereti, ha ő a főnök (szomszéd kutyák csak akkor ugathatnak, ha ő megengedi)",
+    "Szeret kocsikázni :)",
+  ];
+
+  CIM.innerText = "Pár infó as kutyusomról, Manóról :)";
+
+  LISTA.forEach((l) => {
+    let li = elem_letrehozo(UL, "li");
+    li.innerText = l;
+  });
 }
 
 function kepek_hozzaadas(article) {
