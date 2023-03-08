@@ -72,4 +72,7 @@ function elem_letrehozo(szuloelem, elem, osztaly = "") {
   return GYEREK;
 }
 
+function eger_esemeny(event) {
+  event.target.classList.toggle("szegely");
+}
 
