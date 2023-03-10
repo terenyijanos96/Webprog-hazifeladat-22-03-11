@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Weboldal a kutyusomról, Manóról :)" />
+    <meta name="keywords" content="Kutya, Puli, Manó" />
+    <meta name="author" content="Terényi János" />
+    <title>Terényi János</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      article {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .kep_cella {
+        flex: 0 0 calc(20% - 10px);
+      }
+
+      article img {
+        width: 100%;
+      }
+
+      .szegely {
+        border: 5px solid #d3663e;
+      }
+
+      footer {
+        text-align: center;
+      }
+
+      @media screen and (max-width: 900px) {
+        .kep_cella {
+          flex: 0 0 calc(33% - 10px);
+        }
+
+        @media screen and (max-width: 500px) {
+          .kep_cella {
+            flex: 0 0 calc(80% - 10px);
+          }
+        }
+      }
+    </style>
+
+    <script>
+      window.addEventListener("load", init);
+      function init() {
+        const KEPEK = [
+          "kepek/kep1.jpg",
+          "kepek/kep2.jpg",
+          "kepek/kep3.jpg",
+          "kepek/kep4.jpg",
+          "kepek/kep5.jpg",
+        ];
+        const ARTICLE = document.querySelector("body article");
+        
+        kepek_feltoltese(ARTICLE, KEPEK);
+      }
+
+      function kepek_feltoltese(article, kepek) {
+        kepek.forEach((k) => {
+          let kep_cella = document.createElement("div");
+          let img = document.createElement("img");
+
+          article.appendChild(kep_cella);
+
+          kep_cella.classList.add("kep_cella");
+          kep_cella.appendChild(img);
+
+          img.src = k;
+          img.addEventListener("mouseenter", eger_esemeny);
+          img.addEventListener("mouseleave", eger_esemeny);
+        });
+      }
+
+      function eger_esemeny(event) {
+        event.target.classList.toggle("szegely");
+      }
+
+    </script>
+  </head>
+  <body>
+    <article></article>
+    <footer><a href="index.html">Vissza a másik verzióra</a></footer>
+  </body>
+</html>
