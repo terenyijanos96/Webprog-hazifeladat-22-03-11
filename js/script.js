@@ -10,11 +10,10 @@ function lista_elkeszitese(article) {
   const CIM = elem_letrehozo(article, "h2");
   const UL = elem_letrehozo(article, "ul");
   const LISTA = [
-    "Decemberben lett 4 éves",
-    "Lány kutya",
-    "Nagyon szeret ugatni..",
-    "A legtöbb játékát 1-2 nap alatt szétrágcsálja",
+    "4 éves kislány kutya",
     "Nagyon ragaszkodó",
+    "A legtöbb játékát 1-2 nap alatt szétrágcsálja",
+    "Nagyon szeret ugatni..",
     "Féltékeny típus",
     "Szereti a finom falatokat.. csak azokat szereti...",
     "Van egy kényelmes fotelünk, amit kisajátított magának...",
