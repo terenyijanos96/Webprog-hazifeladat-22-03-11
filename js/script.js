@@ -12,10 +12,10 @@ function lista_elkeszitese(article) {
   const LISTA = [
     "Decemberben lett 4 éves",
     "Lány kutya",
-    "Féltékeny típus",
     "Nagyon szeret ugatni..",
     "A legtöbb játékát 1-2 nap alatt szétrágcsálja",
     "Nagyon ragaszkodó",
+    "Féltékeny típus",
     "Szereti a finom falatokat.. csak azokat szereti...",
     "Van egy kényelmes fotelünk, amit kisajátított magának...",
     "Szereti, ha ölben dajkálják",
